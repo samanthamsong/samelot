@@ -3,42 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Samelot — a gloriously romantic daily dashboard." />
-  <title>Samelot · A daily romance</title>
+  <meta name="description" content="Samelot — Sam's daily practice dashboard." />
+  <title>Samelot</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="sunburst" aria-hidden="true"></div>
-  <div class="sparkles" aria-hidden="true">✦　·　✧　·　✦　·　✧</div>
   <main class="page-shell">
-    <header class="masthead">
-      <a class="brand" href="#top"><span class="crown">♕</span> SAM ELOT</a>
-      <nav aria-label="Main navigation"><a class="active" href="#top">HOME</a><a href="#quests">QUESTS</a><a href="#diary">DIARY</a></nav>
-      <button class="profile" type="button" aria-label="Your profile">S</button>
-    </header>
-
-    <section class="hero" id="top">
-      <p class="super-title">A personal kingdom for little victories</p>
-      <div class="hero-layout">
-        <div class="dragon dragon-left" aria-hidden="true">♘</div>
-        <div class="hero-copy"><p class="ribbon">Friday, September 4 <span>✦</span> 11:27 AM</p><h1>Bonjour,<br><em>Princess Sam.</em></h1><p>Today is a splendid day for becoming the heroine of your own story.</p><a class="cta" href="#quests">ENTER THE CASTLE <span>→</span></a></div>
-        <div class="dragon dragon-right" aria-hidden="true">♞</div>
-      </div>
-      <p class="motto">✦ <em>Fantasy, discipline &amp; a little bit of sparkle.</em> ✦</p>
+    <section class="intro">
+      <p class="date" id="date">Friday, September 4</p>
+      <h1>Samelot<span>✦</span></h1>
+      <p class="welcome">A small court for the things you care about.</p>
+      <div class="horse-band" aria-hidden="true"><span>♞</span><i></i><span>♘</span><i></i><span>♞</span></div>
     </section>
 
-    <section class="quest-intro" id="quests"><p>THE ROYAL PROGRAM</p><h2>Choose your adventure</h2></section>
-    <section class="quests" aria-label="Today’s pursuits">
-      <article class="card training"><div class="corner-star">✦</div><p class="card-label">THE HEROINE’S JOURNEY</p><div class="card-title"><span class="icon">♜</span><h3>Triathlon<br>training</h3></div><p>Build stamina. Find your rhythm. Make legends of ordinary Tuesdays.</p><div class="planned"><span>TODAY’S QUEST</span><strong>✦ Easy 5 mile run</strong></div><div class="meter-label"><span>WEEKLY GLORY</span><b>3 / 5</b></div><div class="meter"><i></i></div><button type="button">LACE UP <span>→</span></button></article>
-      <article class="card accordion"><div class="checker" aria-hidden="true"></div><p class="card-label">THE MINSTREL’S HALL</p><div class="card-title"><span class="icon">♬</span><h3>Accordion<br>practice</h3></div><p>Bellows, bravado, and one more beautiful run through.</p><div class="cassette"><span>NOW PLAYING</span><strong>SCALES &amp;<br>ARPEGGIOS</strong><i>♫</i></div><div class="streak">✦ 6 DAYS IN A ROW, DARLING ✦</div><button type="button">PLAY ON <span>→</span></button></article>
-      <article class="card french"><div class="flower" aria-hidden="true">✿</div><p class="card-label">THE SALON OF PARIS</p><div class="card-title"><span class="icon">✧</span><h3>French<br>practice</h3></div><p>A little je ne sais quoi, cultivated daily.</p><div class="word"><span>MOT DU JOUR</span><strong>flâner</strong><em>to stroll; to wander without hurry</em></div><button type="button">BONJOUR, LESSON <span>→</span></button></article>
+    <section class="quests" aria-label="Today’s practices">
+      <article class="card training">
+        <p class="card-label">THE HEROINE’S JOURNEY</p>
+        <div class="card-title"><span class="icon">♞</span><h2>Triathlon<br>training</h2></div>
+        <p class="description">For the long game. A little stronger, a little readier.</p>
+        <div class="today"><span>ON THE AGENDA</span><strong>Easy run · 5 miles</strong><em>45 minutes · Zone 2</em></div>
+        <div class="meter-label"><span>THIS WEEK</span><b>3 of 5</b></div><div class="meter"><i></i></div>
+        <button type="button">START SESSION <span>→</span></button>
+      </article>
+
+      <article class="card accordion">
+        <div class="mini-checker" aria-hidden="true"></div>
+        <p class="card-label">THE MINSTREL’S ROOM</p>
+        <div class="card-title"><span class="icon">♬</span><h2>Accordion<br>practice</h2></div>
+        <p class="description">Twenty minutes with the bellows and a favorite song.</p>
+        <div class="music-note"><span>UP NEXT</span><strong>Scales &amp;<br>arpeggios</strong><i>♫</i></div>
+        <p class="streak">✦ 6-DAY STREAK ✦</p>
+        <button type="button">PICK IT UP <span>→</span></button>
+      </article>
+
+      <article class="card french">
+        <p class="card-label">THE PARISIAN HOUR</p>
+        <div class="card-title"><span class="icon">✧</span><h2>French<br>practice</h2></div>
+        <p class="description">A charming little habit. One word, one lesson, one day at a time.</p>
+        <div class="word"><span>MOT DU JOUR</span><strong>flâner</strong><em>to stroll; to wander without hurry</em></div>
+        <button type="button">OPEN LESSON <span>→</span></button>
+      </article>
     </section>
 
-    <section class="bottom" id="diary"><article class="agenda"><p class="card-label">THE DAY’S ITINERARY</p><h2>Things to make<br><em>marvelous</em></h2><div class="timeline"><div><time>08:30</time><p><b>Morning pages</b><span>Written · Brilliant</span></p><i>✓</i></div><div><time>12:30</time><p><b>Easy run</b><span>5 miles · zone 2</span></p><i></i></div><div><time>17:00</time><p><b>Accordion practice</b><span>Scales &amp; arpeggios</span></p><i></i></div></div></article><aside class="quote"><p>THE ORACLE SAYS</p><blockquote>“She remembered who she was and the game changed.”</blockquote><cite>— Lalah Delia</cite><div class="moon">☾</div></aside></section>
-    <footer>MADE WITH <span>♥</span>, HOT PINK INK &amp; A GREAT DEAL OF IMAGINATION · SAM ELOT 2026</footer>
+    <section class="ledger">
+      <div class="ledger-heading"><p class="card-label">TODAY, IN THREE MOVES</p><h2>Keep it simple.</h2></div>
+      <ol>
+        <li><time>12:30</time><span class="chess">♞</span><div><strong>Easy run</strong><small>5 miles · zone 2</small></div><button aria-label="Mark easy run complete">○</button></li>
+        <li><time>17:00</time><span class="chess">♬</span><div><strong>Accordion practice</strong><small>Scales &amp; arpeggios</small></div><button aria-label="Mark accordion practice complete">○</button></li>
+        <li><time>20:30</time><span class="chess">✧</span><div><strong>French</strong><small>One short lesson</small></div><button aria-label="Mark French practice complete">○</button></li>
+      </ol>
+    </section>
+    <footer>♞ &nbsp; SAM ELOT &nbsp; ♞</footer>
   </main>
   <script src="script.js"></script>
 </body>
