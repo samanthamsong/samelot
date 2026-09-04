@@ -3,74 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Samelot — Sam's daily home page." />
-  <title>Samelot · Daily Court</title>
+  <meta name="description" content="Samelot — a gloriously romantic daily dashboard." />
+  <title>Samelot · A daily romance</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Crimson+Pro:opsz,wght@12..72,400;12..72,500;12..72,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="mist mist-one"></div><div class="mist mist-two"></div>
+  <div class="sunburst" aria-hidden="true"></div>
+  <div class="sparkles" aria-hidden="true">✦　·　✧　·　✦　·　✧</div>
   <main class="page-shell">
     <header class="masthead">
-      <a class="brand" href="#top" aria-label="Samelot home"><span class="crown">♛</span><span>Samelot</span></a>
-      <div class="day"><span id="date">Friday, September 4</span><span class="sun">☼</span><span id="time">11:10 AM</span></div>
-      <button class="profile" type="button" aria-label="Open profile">S</button>
+      <a class="brand" href="#top"><span class="crown">♕</span> SAM ELOT</a>
+      <nav aria-label="Main navigation"><a class="active" href="#top">HOME</a><a href="#quests">QUESTS</a><a href="#diary">DIARY</a></nav>
+      <button class="profile" type="button" aria-label="Your profile">S</button>
     </header>
 
     <section class="hero" id="top">
-      <p class="eyebrow">The daily court of Sam</p>
-      <h1>Good morrow, Sam.</h1>
-      <p class="hero-copy">Small, steady acts make a mighty life. What shall we tend to today?</p>
-      <div class="motto"><span></span><em>Fortes fortuna adiuvat</em><span></span></div>
+      <p class="super-title">A personal kingdom for little victories</p>
+      <div class="hero-layout">
+        <div class="dragon dragon-left" aria-hidden="true">♘</div>
+        <div class="hero-copy"><p class="ribbon">Friday, September 4 <span>✦</span> 11:27 AM</p><h1>Bonjour,<br><em>Princess Sam.</em></h1><p>Today is a splendid day for becoming the heroine of your own story.</p><a class="cta" href="#quests">ENTER THE CASTLE <span>→</span></a></div>
+        <div class="dragon dragon-right" aria-hidden="true">♞</div>
+      </div>
+      <p class="motto">✦ <em>Fantasy, discipline &amp; a little bit of sparkle.</em> ✦</p>
     </section>
 
+    <section class="quest-intro" id="quests"><p>THE ROYAL PROGRAM</p><h2>Choose your adventure</h2></section>
     <section class="quests" aria-label="Today’s pursuits">
-      <article class="featured card">
-        <div class="card-kicker"><span class="crest crest-red">⌁</span><span>Today’s quest</span><button class="more" aria-label="More training options">•••</button></div>
-        <div class="featured-content">
-          <div>
-            <p class="small-label">Triathlon training · Week 4</p>
-            <h2>Build the engine</h2>
-            <p class="description">An easy, confidence-building run with room to breathe.</p>
-          </div>
-          <div class="session-stats"><div><strong>45</strong><span>minutes</span></div><div><strong>5.0</strong><span>miles</span></div></div>
-        </div>
-        <div class="progress-row"><div><span>Weekly progress</span><strong>3 / 5 sessions</strong></div><div class="progress"><i></i></div></div>
-        <button class="primary" type="button">Begin the run <span>→</span></button>
-      </article>
-
-      <article class="practice card accordion-card">
-        <div class="card-kicker"><span class="crest crest-gold">♬</span><span>Practice hall</span></div>
-        <h2>Accordion</h2>
-        <p class="description">Keep the bellows singing.</p>
-        <div class="practice-detail"><span class="note">♪</span><div><strong>Scales &amp; arpeggios</strong><small>20 minute practice</small></div><button class="circle-arrow" type="button" aria-label="Start accordion practice">→</button></div>
-        <div class="streak"><span>✦</span> 6-day streak <i>▰ ▰ ▰ ▰ ▰ ▰</i></div>
-      </article>
-
-      <article class="practice card french-card">
-        <div class="card-kicker"><span class="crest crest-blue">✦</span><span>Study chamber</span></div>
-        <h2>French</h2>
-        <p class="description">Un peu chaque jour.</p>
-        <div class="word-card"><span>Word of the day</span><strong>flâner</strong><em>to stroll, to wander</em></div>
-        <button class="text-button" type="button">Enter the lesson <span>→</span></button>
-      </article>
+      <article class="card training"><div class="corner-star">✦</div><p class="card-label">THE HEROINE’S JOURNEY</p><div class="card-title"><span class="icon">♜</span><h3>Triathlon<br>training</h3></div><p>Build stamina. Find your rhythm. Make legends of ordinary Tuesdays.</p><div class="planned"><span>TODAY’S QUEST</span><strong>✦ Easy 5 mile run</strong></div><div class="meter-label"><span>WEEKLY GLORY</span><b>3 / 5</b></div><div class="meter"><i></i></div><button type="button">LACE UP <span>→</span></button></article>
+      <article class="card accordion"><div class="checker" aria-hidden="true"></div><p class="card-label">THE MINSTREL’S HALL</p><div class="card-title"><span class="icon">♬</span><h3>Accordion<br>practice</h3></div><p>Bellows, bravado, and one more beautiful run through.</p><div class="cassette"><span>NOW PLAYING</span><strong>SCALES &amp;<br>ARPEGGIOS</strong><i>♫</i></div><div class="streak">✦ 6 DAYS IN A ROW, DARLING ✦</div><button type="button">PLAY ON <span>→</span></button></article>
+      <article class="card french"><div class="flower" aria-hidden="true">✿</div><p class="card-label">THE SALON OF PARIS</p><div class="card-title"><span class="icon">✧</span><h3>French<br>practice</h3></div><p>A little je ne sais quoi, cultivated daily.</p><div class="word"><span>MOT DU JOUR</span><strong>flâner</strong><em>to stroll; to wander without hurry</em></div><button type="button">BONJOUR, LESSON <span>→</span></button></article>
     </section>
 
-    <section class="lower-grid">
-      <article class="card agenda">
-        <div class="section-title"><div><p class="eyebrow">The ledger</p><h2>Today’s order</h2></div><button class="quiet-button" type="button">View calendar</button></div>
-        <ol>
-          <li><time>08:30</time><div><strong>Morning pages</strong><span>A clear mind before the day begins</span></div><i class="done">✓</i></li>
-          <li><time>12:30</time><div><strong>Easy run</strong><span>45 min · Zone 2</span></div><i class="dot"></i></li>
-          <li><time>17:00</time><div><strong>Accordion practice</strong><span>Scales &amp; arpeggios</span></div><i class="dot"></i></li>
-        </ol>
-      </article>
-      <aside class="card reflection"><p class="eyebrow">A line for the road</p><blockquote>“The secret of getting ahead is getting started.”</blockquote><cite>— Mark Twain</cite><div class="seal">S</div></aside>
-    </section>
-
-    <footer><span>Made for the everyday becoming.</span><span>✦</span><span>Samelot, Anno 2026</span></footer>
+    <section class="bottom" id="diary"><article class="agenda"><p class="card-label">THE DAY’S ITINERARY</p><h2>Things to make<br><em>marvelous</em></h2><div class="timeline"><div><time>08:30</time><p><b>Morning pages</b><span>Written · Brilliant</span></p><i>✓</i></div><div><time>12:30</time><p><b>Easy run</b><span>5 miles · zone 2</span></p><i></i></div><div><time>17:00</time><p><b>Accordion practice</b><span>Scales &amp; arpeggios</span></p><i></i></div></div></article><aside class="quote"><p>THE ORACLE SAYS</p><blockquote>“She remembered who she was and the game changed.”</blockquote><cite>— Lalah Delia</cite><div class="moon">☾</div></aside></section>
+    <footer>MADE WITH <span>♥</span>, HOT PINK INK &amp; A GREAT DEAL OF IMAGINATION · SAM ELOT 2026</footer>
   </main>
   <script src="script.js"></script>
 </body>
