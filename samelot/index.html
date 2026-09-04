@@ -12,39 +12,41 @@
 </head>
 <body>
   <main class="page-shell">
-    <section class="intro">
+    <header class="intro">
       <p class="date" id="date">Friday, September 4</p>
       <h1>Samelot<span>✦</span></h1>
-      <div class="horse-band" aria-hidden="true"><span>♞</span><i></i><span>♘</span><i></i><span>♞</span></div>
-    </section>
+      <div class="horse-band" aria-label="Horse, moon, star"><span>♞</span><i></i><span>☾</span><i></i><span>✦</span></div>
+    </header>
 
-    <section class="quests" aria-label="Today’s practices">
-      <article class="card training">
-        <p class="card-label">THE HEROINE’S JOURNEY</p>
-        <div class="card-title"><span class="icon">♞</span><h2>Triathlon<br>training</h2></div>
-        <p class="description">For the long game. A little stronger, a little readier.</p>
-        <div class="today"><span>ON THE AGENDA</span><strong>Easy run · 5 miles</strong><em>45 minutes · Zone 2</em></div>
-        <div class="meter-label"><span>THIS WEEK</span><b>3 of 5</b></div><div class="meter"><i></i></div>
-        <button type="button">START SESSION <span>→</span></button>
-      </article>
+    <section class="practice-list" aria-label="Today’s practices">
+      <details class="practice training" open>
+        <summary><span class="roundel">♞</span><span><small>THE HEROINE’S JOURNEY</small><strong>Triathlon training</strong></span><b aria-hidden="true">+</b></summary>
+        <div class="practice-content">
+          <p>For the long game. A little stronger, a little readier.</p>
+          <div class="today"><span>ON THE AGENDA</span><strong>Easy run · 5 miles</strong><em>45 minutes · Zone 2</em></div>
+          <div class="meter-label"><span>THIS WEEK</span><b>3 of 5</b></div><div class="meter"><i></i></div>
+          <button type="button">START SESSION <span>→</span></button>
+        </div>
+      </details>
 
-      <article class="card accordion">
-        <div class="mini-checker" aria-hidden="true"></div>
-        <p class="card-label">THE MINSTREL’S ROOM</p>
-        <div class="card-title"><span class="icon">♬</span><h2>Accordion<br>practice</h2></div>
-        <p class="description">Twenty minutes with the bellows and a favorite song.</p>
-        <div class="music-note"><span>UP NEXT</span><strong>Scales &amp;<br>arpeggios</strong><i>♫</i></div>
-        <p class="streak">✦ 6-DAY STREAK ✦</p>
-        <button type="button">PICK IT UP <span>→</span></button>
-      </article>
+      <details class="practice accordion">
+        <summary><span class="roundel">♬</span><span><small>THE MINSTREL’S ROOM</small><strong>Accordion practice</strong></span><b aria-hidden="true">+</b></summary>
+        <div class="practice-content">
+          <p>Twenty minutes with the bellows and a favorite song.</p>
+          <div class="music-note"><span>UP NEXT</span><strong>Scales &amp; arpeggios</strong><i>♫</i></div>
+          <p class="streak">✦ 6-DAY STREAK ✦</p>
+          <button type="button">PICK IT UP <span>→</span></button>
+        </div>
+      </details>
 
-      <article class="card french">
-        <p class="card-label">THE PARISIAN HOUR</p>
-        <div class="card-title"><span class="icon">✧</span><h2>French<br>practice</h2></div>
-        <p class="description">A charming little habit. One word, one lesson, one day at a time.</p>
-        <div class="word"><span>MOT DU JOUR</span><strong>flâner</strong><em>to stroll; to wander without hurry</em></div>
-        <button type="button">OPEN LESSON <span>→</span></button>
-      </article>
+      <details class="practice french">
+        <summary><span class="roundel">✧</span><span><small>THE PARISIAN HOUR</small><strong>French practice</strong></span><b aria-hidden="true">+</b></summary>
+        <div class="practice-content">
+          <p>A charming little habit. One word, one lesson, one day at a time.</p>
+          <div class="word"><span>MOT DU JOUR</span><strong>flâner</strong><em>to stroll; to wander without hurry</em></div>
+          <button type="button">OPEN LESSON <span>→</span></button>
+        </div>
+      </details>
     </section>
 
     <section class="ledger">
@@ -55,7 +57,7 @@
         <li><time>20:30</time><span class="chess">✧</span><div><strong>French</strong><small>One short lesson</small></div><button aria-label="Mark French practice complete">○</button></li>
       </ol>
     </section>
-    <footer>♞ &nbsp; SAM ELOT &nbsp; ♞</footer>
+    <footer>♞ &nbsp; ☾ &nbsp; ✦</footer>
   </main>
   <script src="script.js"></script>
 </body>
