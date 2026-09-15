@@ -41,10 +41,32 @@
 
       <details class="practice french">
         <summary><span class="roundel">✧</span><span><small>THE PARISIAN HOUR</small><strong>French practice</strong></span><b aria-hidden="true">+</b></summary>
-        <div class="practice-content">
-          <p>A charming little habit. One word, one lesson, one day at a time.</p>
-          <div class="word"><span>MOT DU JOUR</span><strong>flâner</strong><em>to stroll; to wander without hurry</em></div>
-          <button type="button">OPEN LESSON <span>→</span></button>
+        <div class="practice-content french-practice-content">
+          <p>Translate the passage into French. Use the words you know; your court tutor will explain the rest.</p>
+          <section class="translation-quest" aria-labelledby="translation-prompt-title">
+            <span class="quest-label">TODAY'S TRANSLATION QUEST</span>
+            <h2 id="translation-prompt-title">A quiet morning</h2>
+            <p class="english-prompt" id="english-prompt">Every morning, I drink coffee by the window. I watch the rain and write a short note to my friend. Then I walk to the market to buy bread and fruit.</p>
+            <label for="french-answer">Your French translation</label>
+            <textarea id="french-answer" rows="6" placeholder="Écrivez votre traduction ici…" spellcheck="true"></textarea>
+            <div class="translation-actions">
+              <button type="button" id="check-translation">CHECK MY TRANSLATION <span aria-hidden="true">→</span></button>
+              <button type="button" class="secondary-action" id="show-hints">SHOW WORD HELP</button>
+            </div>
+            <div class="word-help" id="word-help" hidden>
+              <strong>Word help</strong>
+              <ul>
+                <li>every morning = chaque matin</li>
+                <li>by the window = près de la fenêtre</li>
+                <li>to watch = regarder</li>
+                <li>rain = la pluie</li>
+                <li>a short note = un petit mot</li>
+                <li>then = ensuite / puis</li>
+                <li>market = le marché</li>
+              </ul>
+            </div>
+            <div class="translation-feedback" id="translation-feedback" aria-live="polite" hidden></div>
+          </section>
         </div>
       </details>
     </section>
