@@ -7,51 +7,78 @@
   <title>Samelot</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Uncial+Antiqua&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="page-shell">
+
     <header class="intro">
-      <p class="date" id="date">Friday, September 4</p>
-      <h1>Samelot<span>✦</span></h1>
-      <div class="horse-band" aria-label="Horse, moon, star"><span>♞</span><i></i><span>☾</span><i></i><span>✦</span></div>
+      <p class="date-tag" id="date">2026</p>
+      <div class="hero-art">
+        <img src="assets/manuscript-hero.jpg" alt="" aria-hidden="true" />
+      </div>
+      <div class="title-wrap">
+        <p class="credit">a daily chronicle, illuminated by candlelight</p>
+        <h1>Samelot<span>✦</span></h1>
+      </div>
     </header>
 
-    <section class="practice-list" aria-label="Today’s practices">
-      <details class="practice training" open>
-        <summary><span class="roundel">♞</span><span><small>THE HEROINE’S JOURNEY</small><strong>Triathlon training</strong></span><b aria-hidden="true">+</b></summary>
-        <div class="practice-content">
+    <section class="collage" aria-label="Today’s practices">
+
+      <details class="clip clip-hero" open>
+        <span class="bg-numeral">01</span>
+        <span class="tape tape-a" aria-hidden="true"></span>
+        <span class="tape tape-b" aria-hidden="true"></span>
+        <summary>
+          <span class="roundel">♞</span>
+          <span class="headline"><small>the heroine’s journey</small><strong>Triathlon training</strong></span>
+          <b aria-hidden="true">+</b>
+        </summary>
+        <div class="clip-content">
           <p>For the long game. A little stronger, a little readier.</p>
-          <div class="today"><span>ON THE AGENDA</span><strong>Easy run · 5 miles</strong><em>45 minutes · Zone 2</em></div>
-          <div class="meter-label"><span>THIS WEEK</span><b>3 of 5</b></div><div class="meter"><i></i></div>
-          <button type="button">START SESSION <span>→</span></button>
+          <div class="pull-stat"><strong>3<span>/5</span></strong><em>sessions this week</em></div>
+          <div class="today"><span>on the agenda</span><strong>Easy run · 5 miles</strong><em>45 minutes · Zone 2</em></div>
+          <div class="meter"><i></i></div>
+          <button type="button">start session <span>→</span></button>
         </div>
       </details>
 
-      <details class="practice accordion">
-        <summary><span class="roundel">♬</span><span><small>THE MINSTREL’S ROOM</small><strong>Accordion practice</strong></span><b aria-hidden="true">+</b></summary>
-        <div class="practice-content">
+      <details class="clip clip-note">
+        <span class="bg-numeral">02</span>
+        <img class="card-art" src="assets/manuscript-note.jpg" alt="" aria-hidden="true" />
+        <summary>
+          <span class="roundel">♬</span>
+          <span class="headline"><small>the minstrel’s room</small><strong>Accordion practice</strong></span>
+          <b aria-hidden="true">+</b>
+        </summary>
+        <div class="clip-content">
           <p>Twenty minutes with the bellows and a favorite song.</p>
-          <div class="music-note"><span>UP NEXT</span><strong>Scales &amp; arpeggios</strong><i>♫</i></div>
-          <p class="streak">✦ 6-DAY STREAK ✦</p>
-          <button type="button">PICK IT UP <span>→</span></button>
+          <div class="music-note"><span>up next</span><strong>Scales &amp; arpeggios</strong><i>♫</i></div>
+          <p class="streak">✦ 6-day streak ✦</p>
+          <button type="button">pick it up <span>→</span></button>
         </div>
       </details>
 
-      <details class="practice french">
-        <summary><span class="roundel">✧</span><span><small>THE PARISIAN HOUR</small><strong>French practice</strong></span><b aria-hidden="true">+</b></summary>
-        <div class="practice-content french-practice-content">
+      <details class="clip clip-quest">
+        <span class="bg-numeral">03</span>
+        <img class="card-art" src="assets/manuscript-quest.jpg" alt="" aria-hidden="true" />
+        <summary>
+          <span class="roundel">✧</span>
+          <span class="headline"><small>the parisian hour</small><strong>French practice</strong></span>
+          <b aria-hidden="true">+</b>
+        </summary>
+        <div class="clip-content">
           <p>Translate the passage into French. Use the words you know; your court tutor will explain the rest.</p>
           <section class="translation-quest" aria-labelledby="translation-prompt-title">
-            <span class="quest-label">TODAY'S TRANSLATION QUEST</span>
+            <span class="quest-label">today's translation quest</span>
             <h2 id="translation-prompt-title">A quiet morning</h2>
             <p class="english-prompt" id="english-prompt">Every morning, I drink coffee by the window. I watch the rain and write a short note to my friend. Then I walk to the market to buy bread and fruit.</p>
             <label for="french-answer">Your French translation</label>
             <textarea id="french-answer" rows="6" placeholder="Écrivez votre traduction ici…" spellcheck="true"></textarea>
             <div class="translation-actions">
-              <button type="button" id="check-translation">CHECK MY TRANSLATION <span aria-hidden="true">→</span></button>
-              <button type="button" class="secondary-action" id="show-hints">SHOW WORD HELP</button>
+              <button type="button" id="check-translation">check my translation <span aria-hidden="true">→</span></button>
+              <button type="button" class="secondary-action" id="show-hints">show word help</button>
             </div>
             <div class="word-help" id="word-help" hidden>
               <strong>Word help</strong>
@@ -69,7 +96,10 @@
           </section>
         </div>
       </details>
+
     </section>
+
+    <p class="scrap-note">✦ tomorrow holds three more ✦</p>
 
   </main>
   <script src="script.js"></script>
