@@ -118,16 +118,11 @@ if (answerField) {
 
 const LETTERBOXD_USER = 'sammsong';
 const LETTERBOXD_RSS = `https://letterboxd.com/${LETTERBOXD_USER}/rss/`;
-const CORS_PROXY = 'https://corsproxy.io/?url=';
+const RSS2JSON_ENDPOINT = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(LETTERBOXD_RSS)}`;
 
 const yearStatNode = document.querySelector('#films-year-stat');
 const latestFilmNode = document.querySelector('#latest-film');
 const latestReviewNode = document.querySelector('#latest-review');
-
-function textOf(node, selector) {
-  const el = node.querySelector(selector);
-  return el ? el.textContent.trim() : '';
-}
 
 function stripHtml(html) {
   const div = document.createElement('div');
@@ -135,52 +130,52 @@ function stripHtml(html) {
   return div.textContent.trim();
 }
 
+// Letterboxd RSS doesn't include a dedicated watchedDate field once routed
+// through rss2json, so derive the watch year from pubDate (the review/watch
+// timestamp) instead.
 async function loadLetterboxd() {
   if (!yearStatNode) return;
 
   try {
-    const res = await fetch(CORS_PROXY + encodeURIComponent(LETTERBOXD_RSS));
+    const res = await fetch(RSS2JSON_ENDPOINT);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const xmlText = await res.text();
-    const xml = new DOMParser().parseFromString(xmlText, 'application/xml');
+    const data = await res.json();
 
-    if (xml.querySelector('parsererror')) throw new Error('Could not parse feed');
+    if (data.status !== 'ok' || !Array.isArray(data.items)) {
+      throw new Error('Unexpected feed response');
+    }
 
-    const items = Array.from(xml.querySelectorAll('item'));
+    const items = data.items;
     const currentYear = new Date().getFullYear();
 
     const watchedThisYear = items.filter((item) => {
-      const watchedDate = textOf(item, 'watchedDate');
-      return watchedDate && new Date(watchedDate).getFullYear() === currentYear;
+      return item.pubDate && new Date(item.pubDate.replace(' ', 'T')).getFullYear() === currentYear;
     });
 
     yearStatNode.innerHTML = `<strong>${watchedThisYear.length}<span>films</span></strong><em>watched in ${currentYear}</em>`;
 
     const latest = items[0];
     if (latest) {
-      const fullTitle = textOf(latest, 'title');
+      const fullTitle = latest.title || '';
       const match = fullTitle.match(/^(.*),\s(\d{4})\s-\s(.*)$/);
       const filmTitle = match ? match[1] : fullTitle;
       const filmYear = match ? match[2] : '';
       const ratingText = match ? match[3] : '';
-      const watchedDate = textOf(latest, 'watchedDate');
-      const formattedDate = watchedDate
-        ? new Date(watchedDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+      const watchedDate = latest.pubDate
+        ? new Date(latest.pubDate.replace(' ', 'T')).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
         : '';
 
       if (latestFilmNode) {
         latestFilmNode.innerHTML = `
           <span>most recent</span>
           <strong>${filmTitle}${filmYear ? ` (${filmYear})` : ''}</strong>
-          <em>${ratingText}${formattedDate ? ` · watched ${formattedDate}` : ''}</em>
+          <em>${ratingText}${watchedDate ? ` · watched ${watchedDate}` : ''}</em>
         `;
       }
 
-      const descriptionHtml = textOf(latest, 'description');
-      const reviewText = stripHtml(descriptionHtml)
-        .replace(/^\s*/, '')
-        .trim();
-      // Strip the poster-image line Letterboxd includes; keep the written review only.
+      const descriptionHtml = latest.description || latest.content || '';
+      const reviewText = stripHtml(descriptionHtml).trim();
+      // Strip the poster-image alt text / leading whitespace Letterboxd includes; keep the written review only.
       const reviewOnly = reviewText.replace(/^.*?(?=[A-Za-z"'\u2018\u2019])/s, '').trim();
 
       if (latestReviewNode && reviewOnly) {
