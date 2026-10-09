@@ -22,6 +22,20 @@ body{
   background:var(--field);
 }
 
+.sketch-bg{
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(1400px,160%);
+  max-width:none;
+  opacity:.09;
+  mix-blend-mode:luminosity;
+  pointer-events:none;
+  z-index:0;
+  filter:sepia(.3) contrast(1.1);
+}
+
 /* ---------- HEADER ---------- */
 
 .intro{
